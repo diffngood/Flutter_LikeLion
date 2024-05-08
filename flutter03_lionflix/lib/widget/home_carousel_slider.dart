@@ -155,16 +155,18 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
 }
 
 // 하단 인디케이터를 만들어 반환하는 함수
-// List<Widget> makeIndicator(List list, int imagePosition){
-//
-//   List<Widget> result = [];
-//
-//   // 영화의 수 만큼 반복한다.
-//   for(var i=0; i<list.length; i++){
-//     result.add(Container(
-//       // 가로길이
-//       width: 8,
-//       height: 10,
-//     ));
-//   }
-// }
+/*
+List<Widget> makeIndicator(List list, int imagePosition){
+
+  List<Widget> result = [];
+
+  // 영화의 수 만큼 반복한다.
+  for(var i=0; i<list.length; i++){
+    result.add(Container(
+      // 가로길이
+      width: 8,
+      height: 10,
+    ));
+  }
+}
+*/

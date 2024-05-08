@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter03_lionflix/screen/drama_screen.dart';
+import 'package:flutter03_lionflix/screen/movie_screen.dart';
 
 // PreferredSizeWidget : 크기 조정이 가능한 위젯을 구현할때 사용하는 클래스
 // 높이나 가로길이를 조절해줘야 하는 위젯을 만들 때 반드시 붙혀줘야 한다.
@@ -36,12 +38,24 @@ class _HomeTopAppBarState extends State<HomeTopAppBar> {
       actions: [
         // tv 메뉴
         IconButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DramaScreen(),
+                )
+              );
+            },
             icon: Icon(Icons.tv)
         ),
         // 영화 메뉴
         IconButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MovieScreen(),
+                  )
+              );
+            },
             icon: Icon(Icons.movie)
         ),
         // 찜 메뉴
