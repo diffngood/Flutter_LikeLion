@@ -5,7 +5,13 @@ import 'package:flutter03_lionflix/screen/detail_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeCarouselSlider extends StatefulWidget {
-  const HomeCarouselSlider({super.key});
+
+  // 영화 데이터를 담을 상태 변수
+  List<Map<String, dynamic>> movieData = [];
+  // 영화 포스터를 담을 상태 변수
+  List<Image> posterData = [];
+
+  HomeCarouselSlider(this.movieData, this.posterData, {super.key});
 
   @override
   State<HomeCarouselSlider> createState() => _HomeCarouselSliderState();
@@ -18,8 +24,9 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
 
   // 포스터 이미지들
   var images = [
-    Image.asset('lib/assets/images/movie1.jpg'),
-    Image.asset('lib/assets/images/movie2.jpg'),
+    // Image.asset('lib/assets/images/movie1.jpg'),
+    Image.network('https://i.namu.wiki/i/GZguzAl4x6PFmDuImcrqTVSE-RucuJKd2WdJ3Bw2O9WtCtS4II-IlxmolSnJNarfjx3aV2-Opg3ZkhOV7d5JtAWJv9o-4MvQ2M_LCs_tqjCFZBtdjl3-Cn0AvwKnTUBk-wnQw2SVtMPPNZ9a2dUSjA.webp'),
+    Image.asset('lib/assets/images/movie3.jpg'),
     Image.asset('lib/assets/images/movie3.jpg'),
     Image.asset('lib/assets/images/movie4.jpg'),
     Image.asset('lib/assets/images/movie5.jpg'),
@@ -43,12 +50,21 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
 
   @override
   Widget build(BuildContext context) {
+
+    // 영화 제목을 담아준다.
+    movieTitles.clear();
+
+    for (var map in widget.movieData){
+      movieTitles.add(map['movie_title']);
+    }
+
     return Container(
       child: Column(
         children: [
           // 회전목마
           CarouselSlider(
-            items: images,
+            // items: images,
+            items: widget.posterData,
             options: CarouselOptions(
               // 회전목마가 이미지를 보여주는 영역안에서 얼만큼의 크기로 이미지를 보여줄지에 대한 비율.
               // 1.0이 최대

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter03_lionflix/screen/drama_screen.dart';
 import 'package:flutter03_lionflix/screen/movie_screen.dart';
@@ -60,10 +61,32 @@ class _HomeTopAppBarState extends State<HomeTopAppBar> {
         ),
         // 찜 메뉴
         IconButton(
-            onPressed: (){}, 
+            onPressed: (){
+              // addTest();
+              // printTest();
+            },
             icon: Icon(Icons.favorite)
         ),
       ],
     );
+  }
+}
+
+// 테스트 데이터 저장
+Future<void> addTest() async {
+  await FirebaseFirestore.instance.collection('test').add({
+    'data1' : 100,
+    'data2' : 11.111,
+    'data3' : '안녕하세요'
+  });
+}
+
+// 테스트 데이터 출력
+Future<void> printTest() async {
+  var result = await FirebaseFirestore.instance.collection('test').get();
+
+  for(var doc in result.docs){
+    var map = doc.data();
+    print('firebase test : $map');
   }
 }

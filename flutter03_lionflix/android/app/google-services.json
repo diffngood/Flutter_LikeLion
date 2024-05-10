@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "254940276274",
+    "project_id": "flutterlionflix-25316",
+    "storage_bucket": "flutterlionflix-25316.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254940276274:android:e618b5c7d35ef29e233e2b",
+        "android_client_info": {
+          "package_name": "kr.co.lion.flutter03_lionflix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6k9AFz9GpAirF-eVaJcfClo9WxjtAaIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
